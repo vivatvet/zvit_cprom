@@ -193,4 +193,7 @@ if __name__ == '__main__':
     args_parser = argparse.ArgumentParser(prog="zvcprom", add_help=False)
     args_parser.add_argument("--file")
     commands, args = args_parser.parse_known_args()
+    if not commands.file:
+        print("Use --file [path to file]")
+        exit(1)
     Run().main()
